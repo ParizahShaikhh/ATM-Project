@@ -93,10 +93,10 @@ let promptUser = async () => {
             promptWithdrawal();
             break;
         case transaction.deposit:
-            promptWithdrawal();
+            promptDeposit();
             break;
         case transaction.transfer:
-            promptWithdrawal();
+            promptTransfer();
             break;
         case transaction.inquiry:
             handleInquiry();
@@ -124,7 +124,7 @@ let promptDeposit = async () => {
     ]);
     handleDeposit(answers.amount);
 };
-// Prompt for Deposit
+// Prompt for Transfer
 let promptTransfer = async () => {
     let answers = await inquirer.prompt([
         {
@@ -142,72 +142,3 @@ console.log("**".repeat(6) +
     chalk.italic.bgRedBright.black(`Your Initial Balance is "1Lac"`) +
     "**".repeat(6));
 promptUser();
-// let myBalance = 50000; // Dollar $
-// let myPin = 2008;
-// let pinAnswer = await inquirer.prompt(
-//     [
-//         {
-//             name: "pin",
-//             message: "enter your pin",
-//             type: "number"
-//         }
-//     ]
-// );
-// if (pinAnswer.pin === myPin) {
-//     console.log("Correct Pin!");
-//     let operationsAnswer = await inquirer.prompt(
-//         [
-//             {
-//                 name: "operations",
-//             message: "select option",
-//             type: "list",
-//             choices: ["withdraw", "check balance"]
-//         }
-//     ]
-// );
-// console.log(operationsAnswer);
-// if (operationsAnswer.operation === "withdraw") {
-//     let amountAnswer = await inquirer.prompt(
-//             [
-//                 {
-//                     name: "amount",
-//                     message: "enter your amount",
-//                     type: "number"
-//                 }
-//             ]
-//         );
-//         myBalance -= amountAnswer.amount;
-//         console.log("Your remaining balance is: " + myBalance)
-//     }
-// }
-// else {
-//     console.log("Incorrect Pin");
-// }
-//     let operationsAnswer = await inquirer.prompt(
-// [
-//     {
-//         name: "operations",
-//         message: "Select Option",
-//         type: "list",
-//         choices: ["Withdraw", "Check Balance"]
-//     }
-// ]
-//     );
-//     console.log(operationsAnswer);
-//     if (operationsAnswer.operation === "Withdraw") {
-//         let amountAnswer = await inquirer.prompt(
-//             [
-// {
-//     name: "amount",
-//     message: "Enter Your Amount",
-//     type: "number"
-// }
-//             ]
-//         );
-//         myBalance -= amountAnswer.amount;
-//         console.log("Your Remaining Balance is: " + myBalance)
-//     }
-// }
-// else {
-//     console.log("Incorrect pin");
-// }

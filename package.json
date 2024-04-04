@@ -1,6 +1,6 @@
 {
   "name": "ps-atm-project",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "CLI-based-ATM-Project",
   "main": "index.js",
   "type": "module",
